@@ -11,5 +11,11 @@ Generally, we want the workflows to be parametrized. Non-parametrized but strick
 ## Guide to a simple ODA Jupyter Notebook workflow
 
 
+* write your notebook, and make sure it runs from top to bottom
+* make a requirements.txt will the modules you need for this notebook
 * parameterize the notebook, by creating cell with the following tag "parameters" (see [papermill manual]()):
 * define the notebook output, similarly creating cell with tag "outputs"
+* install nb2workflow tooling `pip install nb2workflow[cwl,oda] --upgrade`
+* inspect the notebook `nbinspect my-notebook.ipynb`
+* try to run the notebook `nbrun my-notebook.ipynb`
+* try to start the service `nb2service my-notebook.ipynb`
