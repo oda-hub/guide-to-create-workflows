@@ -14,8 +14,10 @@ One way to create them in ODA is to build **jupyter notebook**.
 
 * write your notebook, and make sure it runs from top to bottom
 * make a requirements.txt will the modules you need for this notebook
-* parameterize the notebook, by creating cell with the following tag "parameters" (see [papermill manual]()):
-* define the notebook output, similarly creating cell with tag "outputs"
+* parameterize the notebook, by creating cell with the following tag "parameters" (see [papermill manual](https://papermill.readthedocs.io/en/latest/usage-parameterize.html#designate-parameters-for-a-cell)):
+* define the notebook output, similarly creating cell with tag "outputs". 
+  * outputs may be strings, floats, lists
+  * outputs may be also strings which contain filenames for valid files. If they do, the whole file will be considered output.
 * install nb2workflow tooling `pip install nb2workflow[cwl,oda] --upgrade`
 * inspect the notebook `nbinspect my-notebook.ipynb`
 * try to run the notebook `nbrun my-notebook.ipynb`
