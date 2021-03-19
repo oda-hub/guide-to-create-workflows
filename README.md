@@ -11,4 +11,5 @@ Generally, we want the workflows to be parametrized. Non-parametrized but strick
 ## Guide to a simple ODA Jupyter Notebook workflow
 
 
-* parameterize the noteboo
+* parameterize the notebook, by creating cell with the following tag "parameters" (see [papermill manual]()):
+* define the notebook output, similarly creating cell with tag "outputs"
