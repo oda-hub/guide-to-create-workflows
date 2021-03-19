@@ -1,4 +1,4 @@
-# guide-to-create-workflows
+# guide-for-creating-workflows
 
 Workflows are all things that can be computed, broadly speaking. 
 
