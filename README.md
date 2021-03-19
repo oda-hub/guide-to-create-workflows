@@ -21,4 +21,6 @@ One way to create them in ODA is to build **jupyter notebook**.
 * install nb2workflow tooling `pip install nb2workflow[cwl,oda] --upgrade`
 * inspect the notebook `nbinspect my-notebook.ipynb`
 * try to run the notebook `nbrun my-notebook.ipynb`
+  * it will use all default parameters 
+  * you can specify parameters as `nbrun --inp-nbins=10 my-notebook.ipynb`, if `nbins` happens to be one of the parameters.
 * try to start the service `nb2service my-notebook.ipynb`
