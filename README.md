@@ -36,15 +36,10 @@ Sometimes, the **function may be in fact called remotely, though API**. From the
 On should be wary that extracting the functions **somewhat obscure content of the workflow, by introducing structure which is not generally automatically traced by workflow execution provenance tracking**.  
 So when reusable part of the workflow matures, it may be extracted and treated as another workflow, providing inputs to the current workflow under development.
 
-However, it is not feasibly to always design workflow to use other workflows by consuming some pre-computed inputs. As described above in this section, workflow development progression often separates some function from within the workflow, or uses.
+It is not feasible to always design workflow to use other workflows by consuming some pre-computed inputs. As described above in this section, workflow development progression often separates some function from within the workflow, or uses.
 **SmarkSky** project and in a way in general **renku plugins** essentially acknowledges this feature of the workflows: they use external functions from within the code at random locations, possibly calling them multiple times.
 
 
-One way to 
-
-Structure of the workflow
-
-Eventually, other workflows
 
 
 
