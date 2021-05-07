@@ -24,3 +24,28 @@ One way to create them in ODA is to build **jupyter notebook**.
   * it will use all default parameters 
   * you can specify parameters as `nbrun --inp-nbins=10 my-notebook.ipynb`, if `nbins` happens to be one of the parameters.
 * try to start the service `nb2service my-notebook.ipynb`
+
+## Workflows development progression: towards python modules, packages, API's
+
+At some point, it may be advisable to move part of code in functions of a **python module** (e.g. `my_functions.py`), stored in the same repository. The functions can be called from the workflow notebook as `from my_functions import my_nice_function; my_nice_function(argument)`.
+
+If some functions are often re-used, they can be stored in external packages, and even published on **pypi** (to allow `pip install my_function_package`).
+
+Sometimes, the **function may be in fact called remotely, though API**. From the point of view of workflow (e.g. notebook) where the function is called there such a remotely executed function may look very similar to local function from a module, giving similar advantages and posing similar challenges.
+
+On should be wary that extracting the functions **somewhat obscure content of the workflow, by introducing structure which is not generally automatically traced by workflow execution provenance tracking**.  
+So when reusable part of the workflow matures, it may be extracted and treated as another workflow, providing inputs to the current workflow under development.
+
+However, it is not feasibly to always design workflow to use other workflows by consuming some pre-computed inputs. As described above in this section, workflow development progression often separates some function from within the workflow, or uses.
+**SmarkSky** project and in a way in general **renku plugins** essentially acknowledges this feature of the workflows: they use external functions from within the code at random locations, possibly calling them multiple times.
+
+
+One way to 
+
+Structure of the workflow
+
+Eventually, other workflows
+
+
+
+
