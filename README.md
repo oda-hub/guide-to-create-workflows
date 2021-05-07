@@ -39,8 +39,11 @@ So when reusable part of the workflow matures, it may be extracted and treated a
 It is not feasible to always design workflow to use other workflows by consuming some pre-computed inputs. As described above in this section, workflow development progression often separates some function from within the workflow, or uses.
 **SmarkSky** project and in a way in general **renku plugins** essentially acknowledges this feature of the workflows: they use external functions from within the code at random locations, possibly calling them multiple times.
 
+This additional information about functions called by the workflow can be introduced to the workflow metadata with special annotations (see more about workflow annotation in [ODA Workflow Publishing and Discovery Guide](https://github.com/oda-hub/workflow-discovery)), such as `oda:requestsAstroqueryService`. These annotations should be also include information about parameters used to annotate the workflow.
+This additional structure associated with workflows will be ingested in the KG. While **it can not be directly interpretted as workflow provenance graph, it is possible to produce additional similar-looking graph with inferred provenance, which is different but analogous to strict renku-derivde provenance**.
 
 
 
 
 
+.
