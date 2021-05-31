@@ -42,6 +42,38 @@ It is not feasible to always design workflow to use other workflows by consuming
 This additional information about functions called by the workflow can be introduced to the workflow metadata with special annotations (see more about workflow annotation in [ODA Workflow Publishing and Discovery Guide](https://github.com/oda-hub/workflow-discovery)), such as `oda:requestsAstroqueryService`. These annotations should be also include information about parameters used to annotate the workflow.
 This additional structure associated with workflows will be ingested in the KG. While **it can not be directly interpretted as workflow provenance graph, it is possible to produce additional similar-looking graph with inferred provenance, which is different but analogous to strict renku-derivde provenance**.
 
+# Example of LegacySurvery workflow
+
+Example:
+
+```python
+import astroquery.legacysurvey
+
+# This is the sort of query will will introspect with SmartSky:
+astroquery.legacysurvey.LegacySurvey.query_object("Mrk421")
+```
+
+We will determine that:
+
+```turtle
+oda:this-particular-workflow oda:isRequesing odaAstroquery:legacysurvey;
+                             oda:isRequesingParameter oda:astroObject;
+                             oda:isRequesingAstroObject odaAstroObjects:Mrk421 .
+```
+
+in addition, we will know that:
+
+```turtle
+odaAstroObjects:Mrk421 rdfs:label "Mrk421";
+                       a odaAstroObjects:AGN .
+```
+
+this will, in the future, allow us to infer that
+
+```turtle
+oda:this-particular-workflow oda:isRelevantIn odaDomains:TimeDomainAstronomy .
+```
+
 
 
 
